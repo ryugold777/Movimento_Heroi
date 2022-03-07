@@ -8,7 +8,7 @@ onready var Heroi = $Robin_Erikson # O nome do nó do herói
 
 func pegar_teclas():
 	# Detecta se as teclas das setas do teclado foram pressionadas
-	velocidade = Vector2()
+	velocidade = Vector2.ZERO
 	if Input.is_action_pressed('ui_right'):
 		Heroi.play("Lado_Direito")
 		velocidade.x += 1
