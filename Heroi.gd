@@ -4,19 +4,17 @@ extends KinematicBody2D
 var rapidez = 80
 var velocidade = Vector2()
 
-onready var Heroi = $AnimatedSprite # O nome do nó do herói
+onready var Heroi = $Robin_Erikson # O nome do nó do herói
 
 func pegar_teclas():
 	# Detecta se as teclas das setas do teclado foram pressionadas
 	velocidade = Vector2()
 	if Input.is_action_pressed('ui_right'):
 		Heroi.play("Lado_Direito")
-		velocidade.y += 1
 		velocidade.x += 1
 	if Input.is_action_pressed('ui_left'):
 		Heroi.play("Lado_Esquerdo")
 		velocidade.x -= 1
-		velocidade.y -= 1
 	if Input.is_action_pressed('ui_left') && Input.is_action_pressed("ui_down"):
 		Heroi.play("")
 		velocidade.x = 0
@@ -24,7 +22,6 @@ func pegar_teclas():
 	if Input.is_action_pressed('ui_down'):
 		Heroi.play("De_Frente")
 		velocidade.y += 1
-		velocidade.x -= 1
 	if Input.is_action_pressed('ui_right') && Input.is_action_pressed("ui_down"):
 		Heroi.play("")
 		velocidade.x = 0
@@ -32,7 +29,6 @@ func pegar_teclas():
 	if Input.is_action_pressed('ui_up'):
 		Heroi.play("De_Costa")
 		velocidade.y -= 1
-		velocidade.x += 1
 	if Input.is_action_pressed('ui_right') && Input.is_action_pressed("ui_up"):
 		Heroi.play("")
 		velocidade.x = 0
