@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 # Declaração das vairáveis
 var rapidez = 80
-var velocidade = Vector2()
+var velocidade = Vector2.ZERO
 
 onready var Heroi = $Robin_Erikson # O nome do nó do herói
 
